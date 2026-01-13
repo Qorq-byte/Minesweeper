@@ -1,0 +1,29 @@
+#include<stdio.h>
+void menu()
+{
+	printf("**************\n");
+	printf("*欢迎登入游戏*\n");
+	printf("*  请选择->  *\n");
+	printf("* 0:退出游戏 *\n");
+	printf("**************\n");
+}
+
+int main()
+{
+	int n;
+	do
+	{
+		menu();
+		printf("请选择:");
+		scanf_s("%d", &n);
+		switch (n)
+		{
+		case (0):
+			printf("退出游戏\n");
+			break;
+		default:
+			break;
+
+		}
+	} while (n);
+}
