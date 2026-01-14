@@ -13,6 +13,7 @@ void game()
 {
 	char show[ROWS][COLS] = { 0 };
 	InitBoard(show, ROWS, COLS,'*');
+	DisplayBoard(show, ROW, COL,'*');
 }
 
 int main()
