@@ -11,7 +11,9 @@ void menu()
 
 void game()
 {
+	char mine[ROWS][COLS] = { 0 };
 	char show[ROWS][COLS] = { 0 };
+	InitBoard(mine, ROWS, COLS,'0');
 	InitBoard(show, ROWS, COLS,'*');
 	DisplayBoard(show, ROW, COL,'*');
 }
