@@ -1,11 +1,18 @@
-#include<stdio.h>
+#include"game.h"
 void menu()
 {
 	printf("**************\n");
 	printf("*欢迎登入游戏*\n");
 	printf("*  请选择->  *\n");
+	printf("* 1:开始游戏 *\n");
 	printf("* 0:退出游戏 *\n");
 	printf("**************\n");
+}
+
+void game()
+{
+	char show[ROWS][COLS] = { 0 };
+	InitBoard(show, ROWS, COLS,'*');
 }
 
 int main()
@@ -18,6 +25,10 @@ int main()
 		scanf_s("%d", &n);
 		switch (n)
 		{
+		case (1):
+			printf("开始游戏\n");
+			game();
+			break;
 		case (0):
 			printf("退出游戏\n");
 			break;
