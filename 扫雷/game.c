@@ -49,3 +49,11 @@ void SetMine(char board[ROWS][COLS], int row, int col)
 	}
 }
 
+int get_my_count(char board[ROWS][COLS], int x, int y)
+{
+	return board[x - 1][y - 1] + board[x - 1][y] + board[x - 1][y + 1] 
+		+ board[x][y - 1] + board[x][y + 1] 
+		+ board[x + 1][y + 1] + board[x + 1][y] + board[x + 1][y - 1]
+		- 8 * '0';
+}
+
