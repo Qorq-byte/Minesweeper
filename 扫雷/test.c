@@ -15,6 +15,9 @@ void game()
 	char show[ROWS][COLS] = { 0 };
 	InitBoard(mine, ROWS, COLS,'0');
 	InitBoard(show, ROWS, COLS,'*');
+	//…Ë÷√¿◊
+	SetMine(mine, ROW, COL);
+	//DisplayBoard(mine, ROW, COL,'0');
 	DisplayBoard(show, ROW, COL,'*');
 }
 

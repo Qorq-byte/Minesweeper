@@ -34,3 +34,18 @@ void DisplayBoard(char board[ROWS][COLS], int row, int col, char set)
 	}
 }
 
+void SetMine(char board[ROWS][COLS], int row, int col)
+{
+	int count = EASY_COUNT;
+	while (count)
+	{
+		int x = rand() % col + 1;
+		int y = rand() % row + 1;
+		if (board[x][y] == '0')
+		{
+			board[x][y] = '1';
+			count--;
+		}
+	}
+}
+
