@@ -23,6 +23,7 @@ void game()
 
 int main()
 {
+	srand((unsigned int)time(NULL));
 	int n;
 	do
 	{
