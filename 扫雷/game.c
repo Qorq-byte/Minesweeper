@@ -57,3 +57,20 @@ int get_my_count(char board[ROWS][COLS], int x, int y)
 		- 8 * '0';
 }
 
+void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
+{
+	int x;
+	int y;
+	printf("请输入坐标->");
+	scanf_s("%d%d", &x,&y);
+	if (x >= 1 && x <= row && y >= 1 && y <= col)
+	{
+		int count = get_my_count(mine, x, y);
+		show[x][y] = count + '0';//此处是转换为数字字符
+		printf("%c\n", show[x][y]);
+	}
+	else
+	{
+		printf("你输入的坐标超出范围，请重新输入");
+	}
+}

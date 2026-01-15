@@ -19,6 +19,7 @@ void game()
 	SetMine(mine, ROW, COL);
 	//DisplayBoard(mine, ROW, COL,'0');
 	DisplayBoard(show, ROW, COL,'*');
+	FineMine(mine, show, ROW, COL);
 }
 
 int main()
