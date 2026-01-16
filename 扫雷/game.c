@@ -61,7 +61,8 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x;
 	int y;
-	while (1)
+	int win=0;
+	while (win<row*col-EASY_COUNT)
 	{
 		printf("请输入坐标->");
 		scanf_s("%d%d", &x,&y);
@@ -81,6 +82,7 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 				}
 				else
 				{
+					win++;
 					int count = get_my_count(mine, x, y);
 					show[x][y] = count + '0';//此处是转换为数字字符
 					DisplayBoard(show, ROW, COL, '*');
@@ -92,6 +94,10 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 		{
 			printf("你输入的坐标超出范围，请重新输入");
 		}
+	}
+	if (win == row * col - EASY_COUNT)
+	{
+		printf("恭喜你排雷成功\n");
 	}
 }
 	
