@@ -67,7 +67,7 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 	{
 		int count = get_my_count(mine, x, y);
 		show[x][y] = count + '0';//此处是转换为数字字符
-		printf("%c\n", show[x][y]);
+		DisplayBoard(show, ROW, COL, '*');
 	}
 	else
 	{
