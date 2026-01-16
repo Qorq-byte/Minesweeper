@@ -65,9 +65,17 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 	scanf_s("%d%d", &x,&y);
 	if (x >= 1 && x <= row && y >= 1 && y <= col)
 	{
-		int count = get_my_count(mine, x, y);
-		show[x][y] = count + '0';//此处是转换为数字字符
-		DisplayBoard(show, ROW, COL, '*');
+		if (mine[x][y] == '1')
+		{
+			printf("你被炸死了\n");
+			DisplayBoard(mine, ROW, COL, '0');
+		}
+		else
+		{
+			int count = get_my_count(mine, x, y);
+			show[x][y] = count + '0';//此处是转换为数字字符
+			DisplayBoard(show, ROW, COL, '*');
+		}
 	}
 	else
 	{
