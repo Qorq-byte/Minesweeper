@@ -61,24 +61,33 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 {
 	int x;
 	int y;
-	printf("请输入坐标->");
-	scanf_s("%d%d", &x,&y);
-	if (x >= 1 && x <= row && y >= 1 && y <= col)
+	while (1)
 	{
-		if (mine[x][y] == '1')
+		printf("请输入坐标->");
+		scanf_s("%d%d", &x,&y);
+		if (x >= 1 && x <= row && y >= 1 && y <= col)
 		{
-			printf("你被炸死了\n");
-			DisplayBoard(mine, ROW, COL, '0');
+			if (mine[x][y] == '1')
+			{
+				printf("你被炸死了\n");
+				DisplayBoard(mine, ROW, COL, '0');
+				break;
+			}
+			else
+			{
+				int count = get_my_count(mine, x, y);
+				show[x][y] = count + '0';//此处是转换为数字字符
+				DisplayBoard(show, ROW, COL, '*');
+			}
 		}
 		else
 		{
-			int count = get_my_count(mine, x, y);
-			show[x][y] = count + '0';//此处是转换为数字字符
-			DisplayBoard(show, ROW, COL, '*');
+			printf("你输入的坐标超出范围，请重新输入");
 		}
 	}
-	else
-	{
-		printf("你输入的坐标超出范围，请重新输入");
-	}
 }
+	
+
+	
+	
+	
