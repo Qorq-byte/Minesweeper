@@ -98,6 +98,7 @@ void FineMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
 	if (win == row * col - EASY_COUNT)
 	{
 		printf("¹§Ï²ÄãÅÅÀ×³É¹¦\n");
+		DisplayBoard(mine, ROW, COL, '0');
 	}
 }
 	
